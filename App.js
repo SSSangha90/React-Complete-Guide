@@ -15,31 +15,58 @@ class App extends Component {
     otherState: 'some other value'
   }
 
-  switchNameHandler = () => {
+  switchNameHandler = (newName) => {
    // console.log('Was clicked!')
    // DONT DO THIS - this.state.persons[0].name = 'Sukhveer'
     this.setState( {
       persons: [
-        { name: 'Sukhveer', age: 29 },
+        { name: newName , age: 29 },
         { name: 'Tanveer', age: 26 },
         { name: 'Jasbinder', age: 51 }
       ]
     })
   }
 
+  nameChangedHandler = (event) => {
+    this.setState( {
+      persons: [
+        { name: 'Sukh' , age: 29 },
+        { name: event.target.value, age: 26 },
+        { name: 'Jasbinder', age: 51 }
+      ]
+    })
+  }
+
   render() {
+    const mainButton = {
+      backgroundColor: 'white',
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px',
+      cursor: 'pointer'
+    };
+
     return (
       <div className="App">
         <h1>Hi, I'm a React Developer</h1>
         <p>Completing Max's tutorial</p>
-        <button onClick={this.switchNameHandler}>Switch Name:</button>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}>My Hobbies: Dancing</Person>
-        <Person name={this.state.persons[2].name} age={this.state.persons[2].age}>And I like cooking</Person>
+        <button 
+          style={mainButton}
+          onClick={() => this.switchNameHandler('Sukhveer!!')}>Switch Name:</button>
+        <Person 
+          name={this.state.persons[0].name} 
+          age={this.state.persons[0].age}/>
+        <Person 
+          name={this.state.persons[1].name} 
+          age={this.state.persons[1].age}
+          click={this.switchNameHandler.bind(this, 'Sukh!')}
+          newChange={this.nameChangedHandler} >My Hobbies: Dancing</Person>
+        <Person 
+          name={this.state.persons[2].name} 
+          age={this.state.persons[2].age}>And I like cooking</Person>
       </div>
     );
   }
 }
 
 export default App;
-
