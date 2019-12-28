@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +67,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+=======
+# React-Complete-Guide
+
+1) Base Syntax and Features:
+  - Simple ReactJS Application with an onClick button function
+  - CSS Styling via import or in-line
+  - Props and State, setState
+  
+  
+>>>>>>> 498a7bd18fb17fe22330aae5e09a0c871aa8b964
